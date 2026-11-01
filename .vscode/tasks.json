@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build PRKMultitool (MinGW)",
+      "type": "shell",
+      "command": "x86_64-w64-mingw32-windres resource.rc -o resource.o && x86_64-w64-mingw32-gcc launcher.c GUI.c logic.c ini_manager.c game_launcher.c image_manager.c resource.o -o PRKMultitool.exe -mwindows -luser32 -lkernel32 -lcomdlg32 -lgdi32 -lgdiplus -lole32 && x86_64-w64-mingw32-gcc settings.c GUI.c ini_manager.c logic.c resource.o -o settings.exe -mwindows -luser32 -lkernel32 -lcomdlg32 && x86_64-w64-mingw32-gcc accounts.c GUI.c ini_manager.c logic.c resource.o -o accounts.exe -mwindows -luser32 -lkernel32",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
